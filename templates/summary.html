@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Finance Summary</title>
+</head>
+<body>
+    <h1>Financial Summary</h1>
+    <p>Total Income: ${{ report['total_income'] }}</p>
+    <p>Total Expense: ${{ report['total_expense'] }}</p>
+    <p>To reach your goal of saving: ${{ report['necessary_savings'] }}</p>
+
+    <h2>Expense Breakdown</h2>
+    <img src="/{{ plots['expense_plot'] }}" alt="Expense Plot">
+
+    <h2>Savings Plan</h2>
+    <img src="/{{ plots['savings_plot'] }}" alt="Savings Plot">
+
+    <h3>Proposed Savings by Category</h3>
+    <ul>
+        {% for category, amount in report['savings_per_category'].items() %}
+        <li>{{ category }}: ${{ amount }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Submit another input</a>
+</body>
+</html>

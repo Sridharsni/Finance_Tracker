@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Finance Tracker</title>
+</head>
+<body>
+    <h1>Enter Your Financial Information</h1>
+    <form action="/submit" method="POST">
+        <label for="salary">Salary:</label>
+        <input type="number" name="salary" step="0.01" required><br><br>
+
+        <label for="rent">Rent:</label>
+        <input type="number" name="rent" step="0.01" required><br><br>
+
+        <label for="utilities">Utilities:</label>
+        <input type="number" name="utilities" step="0.01" required><br><br>
+
+        <label for="miscellaneous">Miscellaneous:</label>
+        <input type="number" name="miscellaneous" step="0.01" required><br><br>
+
+        <label for="goal">Savings Goal:</label>
+        <input type="number" name="goal" step="0.01" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
